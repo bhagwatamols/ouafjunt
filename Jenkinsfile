@@ -40,12 +40,12 @@ pipeline {
 				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\") {
 				
 				bat 'java -cp ".";D:/lib/* com.splwg.CallTEstCases --select-class com.splwg.AllTests --reports-dir="reports"'
-				
-				} 
-				
-		    dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\reports") {
+				   dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\reports") {
 			    junit 'TEST-junit-jupiter.xml'
 		    }
+				} 
+				
+		 
                
             }
         }

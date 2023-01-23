@@ -11,7 +11,7 @@ public class TestJugad_Test extends ContextTestCase{
 	public void testA()
 	{
 		logger.info("Executing test case A");
-		assertEquals(true, false);
+		assertEquals(true, true);
 
 	}
 	

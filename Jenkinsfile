@@ -23,7 +23,7 @@ pipeline {
   
 				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\") {
 				bat 'xcopy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\bin /E /H /C /I /Y'
-				 bat 'javac -cp ../lib/* com/splwg/AllTests.java'
+				 bat 'javac -cp ../lib/* com/splwg/CallTEstCases.java'
 				 bat 'copy D:\\zlib\\*'
 				}        
 

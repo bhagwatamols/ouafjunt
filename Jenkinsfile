@@ -44,7 +44,7 @@ pipeline {
 				} 
 				
 		     dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\reports") {
-			    junit 'TEST-junit-jupiter.xml'
+			    junit 'TEST-junit-vintage.xml'
 		    }
 		 
                

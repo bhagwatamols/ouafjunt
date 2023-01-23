@@ -7,22 +7,22 @@ pipeline {
             steps{
                 cleanWs()
                 checkout scm: [$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs:
-                [[url: 'https://github.com/bhagwatamols/junitrepo.git']]]
+                [[url: 'https://github.com/bhagwatamols/ouafjunt.git']]]
             }
         }
 
         stage('Build'){
             steps{
                 bat 'mkdir lib'
-				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JUNIT_TEST\\lib\\") {
-				bat 'copy D:\\zlib\\*'
+				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\lib\\") {
+				bat 'copy D:\\lib\\*'
 				}
 				dir("cd ..") {
 				
 				}        
   
-				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JUNIT_TEST\\src\\") {
-				 bat 'javac -cp ../lib/* CarTest.java Car.java App.java'
+				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\") {
+				 bat 'javac -cp ../lib/* AllTests.java'
 				 bat 'copy D:\\zlib\\*'
 				}        
 
@@ -36,14 +36,14 @@ pipeline {
         stage('Test'){
             steps{
 			
-				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JUNIT_TEST\\src\\") {
+				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\") {
 				
-				bat 'java -jar junit-platform-console-standalone-1.7.0.jar  -cp "."; --select-class CarTest --reports-dir="reports"'
+				bat 'java -jar junit-platform-console-standalone-1.7.0.jar  -cp "."; --select-class AllTests --reports-dir="reports"'
 				
 				
 				} 
 				
-		    dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\JUNIT_TEST\\src\\reports") {
+		    dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\reports") {
 			    junit 'TEST-junit-jupiter.xml'
 		    }
                

@@ -39,9 +39,7 @@ pipeline {
 			
 				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\") {
 				
-				
-				bat 'java -cp ".";D:/lib/* junit.textui.TestRunner com.splwg.AllTests'
-				
+				bat 'java -cp ".";D:/lib/* com.splwg.CallTEstCases --select-class com.splwg.AllTests --reports-dir="reports"'
 				
 				} 
 				

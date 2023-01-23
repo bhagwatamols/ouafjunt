@@ -22,6 +22,7 @@ pipeline {
 				}        
   
 				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\") {
+				bat 'copyC:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\bin\\*'
 				 bat 'javac -cp ../lib/* com/splwg/AllTests.java'
 				 bat 'copy D:\\zlib\\*'
 				}        
@@ -39,6 +40,7 @@ pipeline {
 				dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\") {
 				
 				bat 'java -jar junit-platform-console-standalone-1.7.0.jar  -cp "."; --select-class AllTests --reports-dir="reports"'
+				bat 'java -cp ".";D:/lib/* junit.textui.TestRunner com.splwg.AllTests'
 				
 				
 				} 

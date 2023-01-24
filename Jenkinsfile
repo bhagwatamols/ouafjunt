@@ -61,6 +61,7 @@ pipeline {
         always {
              dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\reports") {
 			    junit 'TEST-junit-vintage.xml'
+				}
 		    }
         }
 

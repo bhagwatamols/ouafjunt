@@ -43,9 +43,7 @@ pipeline {
 				  
 				} 
 				
-		     dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\reports") {
-			    junit 'TEST-junit-vintage.xml'
-		    }
+		    
 		 
                
             }
@@ -58,5 +56,12 @@ pipeline {
             }
         }
     }
+	
+	  post {
+        always {
+             dir("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\OUAF_TEST\\src\\reports") {
+			    junit 'TEST-junit-vintage.xml'
+		    }
+        }
 
 }
